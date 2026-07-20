@@ -1,0 +1,17 @@
+{
+  "components": [
+    { "id": "batt", "label": "Battery", "type": "power", "x": 40, "y": 40, "notes": "12V battery, negative ground" },
+    { "id": "ign_sw", "label": "Ignition Switch", "type": "switch", "x": 200, "y": 40, "notes": "" },
+    { "id": "fuse_box", "label": "Fuse Box", "type": "connector", "x": 200, "y": 160, "notes": "Pin 4 feeds ignition circuit" },
+    { "id": "gnd", "label": "Frame Ground", "type": "ground", "x": 40, "y": 160, "notes": "" }
+  ],
+  "wires": [
+    { "id": "w1", "from": { "componentId": "batt", "pin": "+" }, "to": { "componentId": "ign_sw", "pin": "1" }, "color": "#c0392b", "gauge": "14 AWG", "circuit": "ignition", "notes": "Red, main feed" },
+    { "id": "w2", "from": { "componentId": "ign_sw", "pin": "2" }, "to": { "componentId": "fuse_box", "pin": "4" }, "color": "#c0392b", "gauge": "16 AWG", "circuit": "ignition", "notes": "" },
+    { "id": "w3", "from": { "componentId": "batt", "pin": "-" }, "to": { "componentId": "gnd", "pin": "1" }, "color": "#2c3e50", "gauge": "14 AWG", "circuit": "ground", "notes": "Black, chassis ground" }
+  ],
+  "circuits": [
+    { "id": "ignition", "name": "Ignition", "color": "#c0392b" },
+    { "id": "ground", "name": "Ground", "color": "#2c3e50" }
+  ]
+}
