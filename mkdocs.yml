@@ -1,6 +1,9 @@
 site_name: K100 Build
 theme:
   name: material
+  icon:
+    logo: material/wrench
+  favicon: assets/favicon.svg
   palette:
     - scheme: default
       toggle:
@@ -21,6 +24,7 @@ exclude_docs: |
   superpowers/
 
 extra_css:
+  - assets/site.css
   - wiring/wiring.css
 extra_javascript:
   - wiring/wiring.js

@@ -1,0 +1,18 @@
+:root {
+  --md-primary-fg-color: #12151a;
+  --md-primary-fg-color--light: #12151a;
+  --md-primary-fg-color--dark: #12151a;
+  --md-accent-fg-color: #e2001a;
+}
+
+.md-header::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    #00a1d6 0%, #00a1d6 33.33%,
+    #5a3d99 33.33%, #5a3d99 66.66%,
+    #e2001a 66.66%, #e2001a 100%
+  );
+}
