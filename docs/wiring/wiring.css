@@ -1,0 +1,38 @@
+#wiring-diagram svg {
+  background: #fafafa;
+  border: 1px solid #ddd;
+}
+
+#wiring-diagram text {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.wiring-message {
+  color: #900;
+  font-style: italic;
+}
+
+.wiring-component {
+  cursor: pointer;
+}
+
+.wiring-faded {
+  opacity: 0.15;
+}
+
+.wiring-highlighted {
+  stroke-width: 4 !important;
+}
+
+.wiring-panel {
+  margin-top: 1em;
+  padding: 0.75em 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.wiring-panel ul {
+  padding-left: 1.2em;
+}
