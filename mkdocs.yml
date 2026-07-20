@@ -15,3 +15,9 @@ nav:
   - Home: index.md
   - Build Log: build-log/index.md
   - Parts: parts.md
+  - Wiring: wiring/index.md
+
+extra_css:
+  - wiring/wiring.css
+extra_javascript:
+  - wiring/wiring.js

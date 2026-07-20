@@ -1,0 +1,14 @@
+#wiring-diagram svg {
+  background: #fafafa;
+  border: 1px solid #ddd;
+}
+
+#wiring-diagram text {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.wiring-message {
+  color: #900;
+  font-style: italic;
+}
