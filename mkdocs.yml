@@ -17,6 +17,9 @@ nav:
   - Parts: parts.md
   - Wiring: wiring/index.md
 
+exclude_docs: |
+  superpowers/
+
 extra_css:
   - wiring/wiring.css
 extra_javascript:
