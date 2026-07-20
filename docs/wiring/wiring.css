@@ -1,15 +1,16 @@
 #wiring-diagram svg {
-  background: #fafafa;
-  border: 1px solid #ddd;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lighter);
 }
 
 #wiring-diagram text {
   font-size: 12px;
   font-family: sans-serif;
+  fill: var(--md-default-fg-color);
 }
 
 .wiring-message {
-  color: #900;
+  color: var(--md-accent-fg-color);
   font-style: italic;
 }
 
@@ -28,9 +29,11 @@
 .wiring-panel {
   margin-top: 1em;
   padding: 0.75em 1em;
-  border: 1px solid #ddd;
+  border: 1px solid var(--md-default-fg-color--lighter);
   border-radius: 4px;
   font-size: 0.9em;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
 }
 
 .wiring-panel ul {
