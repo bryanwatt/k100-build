@@ -1,0 +1,41 @@
+#wiring-diagram svg {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lighter);
+}
+
+#wiring-diagram text {
+  font-size: 12px;
+  font-family: sans-serif;
+  fill: var(--md-default-fg-color);
+}
+
+.wiring-message {
+  color: var(--md-accent-fg-color);
+  font-style: italic;
+}
+
+.wiring-component {
+  cursor: pointer;
+}
+
+.wiring-faded {
+  opacity: 0.15;
+}
+
+.wiring-highlighted {
+  stroke-width: 4 !important;
+}
+
+.wiring-panel {
+  margin-top: 1em;
+  padding: 0.75em 1em;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 4px;
+  font-size: 0.9em;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+
+.wiring-panel ul {
+  padding-left: 1.2em;
+}

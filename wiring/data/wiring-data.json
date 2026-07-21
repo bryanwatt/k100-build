@@ -1,0 +1,34 @@
+{
+  "components": [
+    { "id": "batt", "label": "Battery", "type": "power", "x": 40, "y": 40, "notes": "12V battery, negative ground" },
+    { "id": "ign_sw", "label": "Ignition Switch", "type": "switch", "x": 200, "y": 40, "notes": "" },
+    { "id": "fuse_box", "label": "Fuse Box", "type": "connector", "x": 200, "y": 160, "notes": "Pin 4 feeds ignition circuit" },
+    { "id": "gnd", "label": "Frame Ground", "type": "ground", "x": 40, "y": 160, "notes": "" },
+    { "id": "starter_relay", "label": "Starter Relay", "type": "relay", "x": 380, "y": 40, "notes": "Engages the starter motor from the start circuit" },
+    { "id": "starter", "label": "Starter", "type": "motor", "x": 380, "y": 160, "notes": "Starter motor" },
+    { "id": "mo_lock", "label": "mo.lock Keyless Ignition", "type": "module", "x": 560, "y": 40, "notes": "Keyless ignition module" },
+    { "id": "ign_relay", "label": "Ignition Relay", "type": "relay", "x": 560, "y": 160, "notes": "Standard automotive relay switching ignition-fed accessories" },
+    { "id": "tbd_load", "label": "TBD — Switched Accessory Load", "type": "placeholder", "x": 680, "y": 160, "notes": "Destination not yet determined; connects to the ignition relay's switched output once defined." }
+  ],
+  "wires": [
+    { "id": "w1", "from": { "componentId": "batt", "pin": "+" }, "to": { "componentId": "ign_sw", "pin": "1" }, "color": "#c0392b", "gauge": "14 AWG", "circuit": "ignition", "notes": "Red, main feed" },
+    { "id": "w2", "from": { "componentId": "ign_sw", "pin": "2" }, "to": { "componentId": "fuse_box", "pin": "4" }, "color": "#c0392b", "gauge": "16 AWG", "circuit": "ignition", "notes": "" },
+    { "id": "w3", "from": { "componentId": "batt", "pin": "-" }, "to": { "componentId": "gnd", "pin": "1" }, "color": "#2c3e50", "gauge": "14 AWG", "circuit": "ground", "notes": "Black, chassis ground" },
+    { "id": "w4", "from": { "componentId": "batt", "pin": "+" }, "to": { "componentId": "starter_relay", "pin": "supply-in" }, "color": "#c0392b", "gauge": "6 AWG", "circuit": "starter", "notes": "Red, heavy supply from battery" },
+    { "id": "w5", "from": { "componentId": "batt", "pin": "-" }, "to": { "componentId": "starter_relay", "pin": "ground-in" }, "color": "#2c3e50", "gauge": "6 AWG", "circuit": "starter", "notes": "Black, heavy return to battery" },
+    { "id": "w6", "from": { "componentId": "starter_relay", "pin": "motor-out" }, "to": { "componentId": "starter", "pin": "+" }, "color": "#c0392b", "gauge": "6 AWG", "circuit": "starter", "notes": "Red, heavy feed to starter motor" },
+    { "id": "w7", "from": { "componentId": "starter_relay", "pin": "ground-out" }, "to": { "componentId": "starter", "pin": "ground" }, "color": "#2c3e50", "gauge": "6 AWG", "circuit": "starter", "notes": "Black, heavy return from starter motor" },
+    { "id": "w8", "from": { "componentId": "batt", "pin": "+" }, "to": { "componentId": "mo_lock", "pin": "supply" }, "color": "#c0392b", "gauge": "18 AWG", "circuit": "keyless", "notes": "Red, small supply wire" },
+    { "id": "w9", "from": { "componentId": "mo_lock", "pin": "signal-out" }, "to": { "componentId": "ign_relay", "pin": "switching-in" }, "color": "#27ae60", "gauge": "18 AWG", "circuit": "keyless", "notes": "Green, ignition trigger to relay switching input" },
+    { "id": "w10", "from": { "componentId": "mo_lock", "pin": "ground" }, "to": { "componentId": "gnd", "pin": "2" }, "color": "#2c3e50", "gauge": "18 AWG", "circuit": "keyless", "notes": "Black, small ground wire" },
+    { "id": "w11", "from": { "componentId": "batt", "pin": "+" }, "to": { "componentId": "ign_relay", "pin": "supply-in" }, "color": "#c0392b", "gauge": "12 AWG", "circuit": "keyless", "notes": "Red, medium supply from battery" },
+    { "id": "w12", "from": { "componentId": "ign_relay", "pin": "switched-out" }, "to": { "componentId": "tbd_load", "pin": "in" }, "color": "#c0392b", "gauge": "12 AWG", "circuit": "keyless", "notes": "Red, switched output — target circuit not yet determined" },
+    { "id": "w13", "from": { "componentId": "ign_relay", "pin": "ground" }, "to": { "componentId": "gnd", "pin": "3" }, "color": "#2c3e50", "gauge": "18 AWG", "circuit": "keyless", "notes": "Black, small ground wire" }
+  ],
+  "circuits": [
+    { "id": "ignition", "name": "Ignition", "color": "#c0392b" },
+    { "id": "ground", "name": "Ground", "color": "#2c3e50" },
+    { "id": "starter", "name": "Starter", "color": "#f39c12" },
+    { "id": "keyless", "name": "Keyless Ignition", "color": "#27ae60" }
+  ]
+}
