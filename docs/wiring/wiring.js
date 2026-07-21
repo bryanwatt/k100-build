@@ -5,7 +5,7 @@ const PANEL_ID = "wiring-panel";
 
 function createSvgRoot(container) {
   const svg = document.createElementNS(SVG_NS, "svg");
-  svg.setAttribute("viewBox", "0 0 600 400");
+  svg.setAttribute("viewBox", "0 0 910 400");
   svg.setAttribute("width", "100%");
   svg.setAttribute("height", "500");
   container.appendChild(svg);
